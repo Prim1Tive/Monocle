@@ -1,3 +1,8 @@
 Features:
 
-Search for username in various websites
+
+## usage
+```
+pip install requests
+python3 Monocle.py nickname
+```
