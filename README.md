@@ -1,4 +1,4 @@
-# Monocle - Search usernames in verius websites.
+# Monocle - Search usernames in various websites.
 
 <p align="center">
 <img src="/demo.jpeg"/>
