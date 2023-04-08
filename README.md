@@ -1,7 +1,7 @@
 # Monocle - Search usernames in various websites.
 
 <p align="center">
-<img src="/demo.jpeg"/>
+<img src="demo.jpeg"/>
 </p>
 
 Features:
