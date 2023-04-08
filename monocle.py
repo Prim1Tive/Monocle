@@ -79,24 +79,25 @@ class Monocle:
 
     def sites_reeval(self):
         print(f'[+] Searching for:\t{self.username}')
-        self.requests.Timeout(0.5)
 
         for url in self.sites['sites']:
             self.site_to_test = eval(self.sites['sites'][url])
             try:
-                _request = self.requests.get(self.site_to_test)
+                _request = self.requests.get(self.site_to_test, timeout=2)
+                if _request.status_code == 200:
+                    print(f"[+] {_request.status_code} {self.site_to_test} - Valid! ")
+                    self.SUCCESS.append(self.site_to_test)
+
+                else:
+                    if self.args.failed is True:
+                        self.FAILED.append(self.site_to_test)
+                        print(f"[-] {_request.status_code} {self.site_to_test} -  User Dose not exist")
+
             except:
-                print(f"[+] {_request.status_code}! {self.site_to_test} - Request timed out ")
-
-            if _request.status_code == 200:
-                print(f"[+] {_request.status_code}! {self.site_to_test} - Valid! ")
-                self.SUCCESS.append(self.site_to_test)
-
-            else:
-                if self.args.failed is True:
-                    print(f"[-] {_request.status_code}! {self.site_to_test} -  User Dose not exist")
+                print(f"[+] {_request.status_code} {self.site_to_test} - Request timed out ")
 
     def main(self):
+        print(self.banner)
         self._get_username()
         self.sites_reeval()
 
