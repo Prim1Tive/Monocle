@@ -10,5 +10,5 @@ Features:
 ## usage
 ```
 pip install requests
-python3 Monocle.py nickname
+python3 Monocle.py -u nickname
 ```
