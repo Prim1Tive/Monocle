@@ -5,8 +5,8 @@ import json
 import argparse
 
 def args_handler():
-    parser = argparse.ArgumentParser(prog="FloorGrabber.py", formatter_class=argparse.RawDescriptionHelpFormatter,
-                                     description="This project was built so that one may follow a desired floor of an NFT at any moment by giving a Opensea URL")
+    parser = argparse.ArgumentParser(prog="Monocle.py", formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description="Search usernames in various websites.")
     parser.add_argument("-u", "--username", help='Username to search for', required=True)
     parser.add_argument("-f", "--failed", action='store_true', help='Print failed request', required=False)
     return parser.parse_args()
