@@ -4,9 +4,6 @@
 <img src="demo.jpeg"/>
 </p>
 
-Features:
-
-
 ## usage
 ```
 pip install requests
